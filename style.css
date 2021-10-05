@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px;
+  background: linear-gradient(to right, #00aeff, rgba(135, 17, 204, 0.671));
+}
+
+.container {
+  width: 750px;
+  min-height: 65vh;
+  padding: 25px 40px;
+  background-color: white;
+}
+
+.container h2 {
+  font-size: 35px;
+  text-align: center;
+  background: linear-gradient(to right, #00aeff, rgba(135, 17, 204, 0.671));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+form {
+  padding: 10px;
+}
+
+form .form-line {
+  display: flex;
+  margin: 30px 0;
+}
+
+form .form-line .form-item {
+  position: relative;
+  height: 35px;
+  width: 100%;
+  margin: 0 15px;
+}
+
+.form-item input,
+.form-item textarea {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-size: 17px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.103);
+}
+
+.form-item label {
+  position: absolute;
+  pointer-events: none;
+  font-size: 17px;
+  bottom: 10px;
+}
+
+.form-item textarea {
+  resize: none;
+  height: 60px;
+}
+
+.form-item input:focus,
+.form-item textarea:focus {
+  outline: none;
+  border-bottom: 2px solid #00aeff;
+  transform-origin: center;
+  transition: all 0.4s ease-in-out;
+}
+
+.form-item input:focus + label,
+.form-item textarea:focus + label {
+  transform: translateY(-20px);
+  margin-bottom: 3px;
+  font-weight: 500;
+  color: #00aeff;
+  font-size: 15px;
+  transition: all 0.4s ease;
+}
+
+.submit-button {
+}
+
+.submit-button button {
+  margin: 20px 0 0 18px;
+  text-align: center;
+  height: 40px;
+  width: 27%;
+  border: none;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #00aeff, rgba(135, 17, 204, 0.671));
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.submit-button button:hover {
+  color: rgba(0, 0, 0, 0.212);
+}
