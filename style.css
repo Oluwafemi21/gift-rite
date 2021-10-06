@@ -1,10 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
+@font-face {
+  font-family: Br;
+  src: url("font/BR Firma Light.otf") format("opentype");
+}
+
+
 * {
   margin: 0;
   padding: 0;
   outline: none;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: Br, sans-serif;
 }
 body {
   display: flex;
@@ -23,15 +30,11 @@ body {
 }
 
 .container h2 {
-  font-size: 35px;
-  text-align: center;
-  background: linear-gradient(to right, #00aeff, rgba(135, 17, 204, 0.671));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-form {
-  padding: 10px;
+    font-size: 35px;
+    text-align: center;
+    background: linear-gradient(to right, #00aeff, rgba(135, 17, 204, 0.671));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 form .form-line {
@@ -65,7 +68,7 @@ form .form-line .form-item {
 
 .form-item textarea {
   resize: none;
-  height: 60px;
+  height: 55px;
 }
 
 .form-item input:focus,
@@ -80,17 +83,14 @@ form .form-line .form-item {
 .form-item textarea:focus + label {
   transform: translateY(-20px);
   margin-bottom: 3px;
-  font-weight: 500;
+  font-weight: bolder;
   color: #00aeff;
   font-size: 15px;
   transition: all 0.4s ease;
 }
 
-.submit-button {
-}
-
 .submit-button button {
-  margin: 20px 0 0 18px;
+  margin: 20px 0 0 15px;
   text-align: center;
   height: 40px;
   width: 27%;
@@ -99,10 +99,46 @@ form .form-line .form-item {
   background: linear-gradient(to right, #00aeff, rgba(135, 17, 204, 0.671));
   color: #fff;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: bold;
   cursor: pointer;
 }
 
 .submit-button button:hover {
   color: rgba(0, 0, 0, 0.212);
+}
+
+
+/* Media Queries */
+
+@media (max-width: 700px){
+  .container h2 {
+    font-size: 26px;
+  }
+
+  form{
+    padding: 10px 0 0 0 ;
+  }
+
+  .form-line .form-item,.submit-button button{
+    margin-left:0!important;
+  }
+
+  form .form-line {
+    display: block;
+    width: 100%;
+    margin:0;
+  }
+
+  .form-item label{
+    font-size: 15px;
+  }
+
+  .form-item input,.form-item textarea{
+    margin: 35px 0 ;
+  }
+
+  .submit-button button{
+    margin-top: 30px;
+    width: 100%;
+  }
 }
