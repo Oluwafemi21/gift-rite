@@ -13,6 +13,7 @@
   box-sizing: border-box;
   font-family: Br, sans-serif;
 }
+
 body {
   display: flex;
   align-items: center;
@@ -20,6 +21,25 @@ body {
   min-height: 100vh;
   padding: 40px;
   background: linear-gradient(to right, #00aeff, rgba(135, 17, 204, 0.671));
+}
+
+a{
+  color: #ccc;
+  text-decoration: none;
+}
+
+p{
+  margin: 20px 0;
+  text-align: center;
+}
+
+p a{
+  color:dimgrey;
+  font-weight: bolder;
+}
+
+p a:hover{
+  color: #00aeff;
 }
 
 .container {
@@ -32,11 +52,59 @@ body {
 .container h2 {
     font-size: 35px;
     text-align: center;
-    background: linear-gradient(to right, #00aeff, rgba(135, 17, 204, 0.671));
+    background: linear-gradient(to right, #00aeff, rgba(135, 17, 204, 0.822));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
+
+
+/* Welcome Page */
+main header{
+  font-size: 45px;
+  text-align: center;
+  color: #ccc;
+  animation-name: slide-in;
+  animation-duration: 1.5s;
+  /* transition: all 0.4s ease-in-out; */
+}
+
+@keyframes slide-in {
+  from {transform:translateX(-100%) ;}
+  to {transform: translateX(center);}
+}
+
+@keyframes slide-up {
+  from { transform: translateY(100%);}
+  to { transform: translateY(initial);}
+}
+
+.btns{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.btns a{
+  margin: 25px 20px 0 0;
+  padding: 9px;
+  background: cornflowerblue;
+  border-radius: 4px;
+  animation-name: slide-up;
+  animation-duration: 1.5s;
+}
+
+
+.btns a:hover{
+  color: #eee;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.507);
+  transform: translateY(-10px);
+  transition: all 0.3s ease-in;
+}
+
+
+/* Contact Us */
 form .form-line {
   display: flex;
   margin: 30px 0;
@@ -50,7 +118,7 @@ form .form-line .form-item {
 }
 
 .form-item input,
-.form-item textarea {
+.form-item textarea{
   display: block;
   width: 100%;
   height: 100%;
@@ -59,20 +127,20 @@ form .form-line .form-item {
   border-bottom: 2px solid rgba(0, 0, 0, 0.103);
 }
 
-.form-item label {
+.form-item label{
   position: absolute;
   pointer-events: none;
   font-size: 17px;
   bottom: 10px;
 }
 
-.form-item textarea {
+.form-item textarea{
   resize: none;
   height: 55px;
 }
 
 .form-item input:focus,
-.form-item textarea:focus {
+.form-item textarea:focus{
   outline: none;
   border-bottom: 2px solid #00aeff;
   transform-origin: center;
@@ -80,9 +148,9 @@ form .form-line .form-item {
 }
 
 .form-item input:focus + label,
-.form-item textarea:focus + label {
+.form-item textarea:focus + label,
+.form-item input:valid + label{
   transform: translateY(-20px);
-  margin-bottom: 3px;
   font-weight: bolder;
   color: #00aeff;
   font-size: 15px;
@@ -101,9 +169,18 @@ form .form-line .form-item {
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
+  border-radius: 4px;
 }
 
-.submit-button button:hover {
+.submit-button #sign-up{
+  background: dodgerblue;
+}
+
+.submit-button #sign-up:hover{
+  background: rgb(25, 110, 196);  
+}
+
+.submit-button button:hover{
   color: rgba(0, 0, 0, 0.212);
 }
 
@@ -111,6 +188,10 @@ form .form-line .form-item {
 /* Media Queries */
 
 @media (max-width: 700px){
+  header{
+    font-size: 15px;
+  }
+
   .container h2 {
     font-size: 26px;
   }
@@ -137,8 +218,32 @@ form .form-line .form-item {
     margin: 35px 0 ;
   }
 
+  .btns {
+    width: 100%;
+    
+  }
+
+  .btns a{
+    margin-right: 15px;
+    font-size: 15px;
+  }
+
   .submit-button button{
     margin-top: 30px;
     width: 100%;
   }
 }
+
+@media (max-width: 375px){
+  main header{
+    font-size: 1.9em;
+  }
+  .btns{
+    flex-wrap: wrap;
+  }
+  .btns a{
+    text-align: center;
+    width: 100%;
+  }
+}
+
